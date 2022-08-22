@@ -1,4 +1,4 @@
-import Modal from "../UI/Modal";
+import CartProvider from "../../store/CartProvider";
 import classes from "./Cart.module.css";
 
 const Cart = (props) => {
@@ -11,7 +11,7 @@ const Cart = (props) => {
   );
 
   return (
-    <Modal onHideCart={props.onHideCart}>
+    <CartProvider onHideCart={props.onHideCart}>
       {cartItems}
       <div className={classes.total}>
         <span>Total Amount</span>
@@ -21,7 +21,7 @@ const Cart = (props) => {
         <button className={classes["button--alt"]} onClick={props.onHideCart}>Close</button>
         <button className={classes.button}>Order</button>
       </div>
-    </Modal>
+    </CartProvider>
   );
 };
 
