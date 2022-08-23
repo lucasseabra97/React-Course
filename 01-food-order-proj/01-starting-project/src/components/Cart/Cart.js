@@ -12,11 +12,11 @@ const Cart = (props) => {
   const cartItemRemoveHandler = (id) => {}
 
   const cartItemAddHanlder = (item) => {}
-  
+
   const cartItems = (
     <ul className={classes["cart-items"]}>
       {cartCtx.items.map((item) => (
-        <CartItem key={item.id} {...item}/>
+        <CartItem key={item.id} {...item} onRemove={cartItemRemoveHandler} onAdd={cartItemAddHanlder}/>
       ))}
     </ul>
   );
