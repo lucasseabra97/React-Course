@@ -16,7 +16,9 @@ const Cart = (props) => {
   const cartItems = (
     <ul className={classes["cart-items"]}>
       {cartCtx.items.map((item) => (
-        <CartItem key={item.id} {...item} onRemove={cartItemRemoveHandler} onAdd={cartItemAddHanlder}/>
+        <CartItem key={item.id} {...item} 
+        onRemove={() => cartItemRemoveHandler(item.id)} 
+        onAdd={() => cartItemAddHanlder(item)}/>
       ))}
     </ul>
   );
